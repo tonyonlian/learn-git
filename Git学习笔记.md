@@ -98,7 +98,8 @@ git reset
 ```shell
 git reset HEAD~1
 ```
-执行'git reset HEAD~1' ,如图所示，main分枝移动到C1，本地代码库此时不知道有C2这个提交，但实际C2变更还在，但处于未加入暂存区状态。
+执行'git reset HEAD~1' ,如图所示，main分枝移动到C1，本地代码库此时不知道有C2这个提交，但实际C2变更还在，但处于未加入暂存区状态。 
+  
 ![撤消](noticepic/reset1.gif)
 
 git revert
@@ -166,6 +167,7 @@ git cherry-pick
 > 然后用'git commit --amend' 来进行一些小修复。
 > 接着再用 'git rebase -i '将他们调回原来的顺序。
 > 最后我们把main移到修改的最前面。
+  
 
 执行'git rebase -i HEAD~2' 调整 c2 ,c3顺序
 执行'git commit --amend ' 修复，进行小提交。
@@ -177,7 +179,7 @@ git cherry-pick
 
 ### 提交技巧#2
 
-执行'git checkout main ,git cherry-pick c2 ' 切换分枝到main 复制c2到main分枝。
+执行'git checkout main ,git cherry-pick c2' 切换分枝到main 复制c2到main分枝。
 执行'git commit --amend' 修复，进行小提交。
 执行'git cherry-pick c3' 复制c3到main分枝下。
 
@@ -215,7 +217,7 @@ tag 永远指向一个提交不会改变，就像提交上的一个锚点。
 
 ### 两个父节点
 
-操作符 ^ 与 ~ 符一样，后面也可以跟一个数字。 但是该操作符后面的数字与 ~ 后面的不同，并不是用来指定向上返回几代，而是指定合并提交记录的某个父提交。还记得前面提到过的一个合并提交有两个父提交吧，所以遇到这样的节点时该选择哪条路径就不是很清晰了。 Git 默认选择合并提交的“第一个”父提交，在操作符 ^ 后跟一个数字可以改变这一默认行为。
+操作符 ^ 与 \~ 符一样，后面也可以跟一个数字。 但是该操作符后面的数字与 \~ 后面的不同，并不是用来指定向上返回几代，而是指定合并提交记录的某个父提交。还记得前面提到过的一个合并提交有两个父提交吧，所以遇到这样的节点时该选择哪条路径就不是很清晰了。 Git 默认选择合并提交的“第一个”父提交，在操作符 ^ 后跟一个数字可以改变这一默认行为。
 
 执行'git checkout main^'将HEAD移到main的第一个父节点。
 
