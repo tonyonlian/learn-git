@@ -164,18 +164,15 @@ git cherry-pick
 可以执行：
 
 > 先用 'git rebase -i '将提交重新排序，然后把我们修改的提交记录挪到前面。
-  
 > 然后用'git commit --amend' 来进行一些小修复。
-  
 > 接着再用 'git rebase -i '将他们调回原来的顺序。
-  
 > 最后我们把main移到修改的最前面。
   
   
 
-执行'git rebase -i HEAD~2' 调整 c2 ,c3顺序
+执行'git rebase -i HEAD\~2' 调整 c2 ,c3顺序
 执行'git commit --amend ' 修复，进行小提交。
-执行'git rebase -i HEAD~2' 调整 c3 ,c2 顺序。
+执行'git rebase -i HEAD\~2' 调整 c3 ,c2 顺序。
 执行'git checkout main' 切换到main分枝 。
 执行'git merge caption' 将caption分枝merge到main分枝。
 
